@@ -152,14 +152,11 @@ Usa HTML limpio con colores. Verde para subidas/buenas noticias, rojo para bajad
 El email debe verse bien en móvil. Usa inline CSS."""
 
     respuesta = client.messages.create(
-        model="claude-opus-5-5",
+        model="claude-sonnet-4-5",
         max_tokens=2048,
         messages=[{"role": "user", "content": prompt}]
     )
-    for block in respuesta.content:
-        if hasattr(block, 'text'):
-        return block.text
-return ""
+    return respuesta.content[0].text
 
 # ── Email ─────────────────────────────────────────────────────────────────────
 def enviar_email(html_content):
