@@ -156,7 +156,10 @@ El email debe verse bien en móvil. Usa inline CSS."""
         max_tokens=2048,
         messages=[{"role": "user", "content": prompt}]
     )
-    return respuesta.content[0].text
+    for block in respuesta.content:
+    if hasattr(block, 'text'):
+        return block.text
+return ""
 
 # ── Email ─────────────────────────────────────────────────────────────────────
 def enviar_email(html_content):
