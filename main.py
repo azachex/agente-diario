@@ -157,7 +157,7 @@ El email debe verse bien en móvil. Usa inline CSS."""
         messages=[{"role": "user", "content": prompt}]
     )
     for block in respuesta.content:
-    if hasattr(block, 'text'):
+        if hasattr(block, 'text'):
         return block.text
 return ""
 
