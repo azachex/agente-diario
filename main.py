@@ -152,7 +152,7 @@ Usa HTML limpio con colores. Verde para subidas/buenas noticias, rojo para bajad
 El email debe verse bien en móvil. Usa inline CSS."""
 
     respuesta = client.messages.create(
-        model="claude-sonnet-4-5",
+        model="claude-sonnet-4-6",
         max_tokens=2048,
         messages=[{"role": "user", "content": prompt}]
     )
