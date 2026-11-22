@@ -191,7 +191,7 @@ if __name__ == "__main__":
     print("Agente Diario iniciado. Próxima ejecución: 08:30 hora Madrid")
     schedule.every().day.at("07:30").do(ejecutar_agente)  # 07:30 UTC = 08:30 España
     # Descomenta la siguiente línea para probar al arrancar:
-    # ejecutar_agente()
+    ejecutar_agente()
     while True:
         schedule.run_pending()
         time.sleep(30)
